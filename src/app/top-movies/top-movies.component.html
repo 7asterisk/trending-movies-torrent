@@ -1,0 +1,43 @@
+<div class="md-form container">
+  <i class="fa fa-search prefix"></i>
+  <input type="text" [(ngModel)]="searchText.sname" class="form-control" placeholder="Search In Top 100">
+</div>
+
+<div class="container">
+  <table mdbTable class="z-depth-1">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies | filter:searchText ;let i = index">
+        <th class="d-sm-none" scope="row"><a routerLink="/download-page/{{movie.id}}">{{i+1}} {{movie.sname}}</a></th>
+        <th class="d-none d-sm-block" scope="row"><a routerLink="/download-page/{{movie.id}}">{{i+1}}
+            {{movie.name}}</a></th>
+        <!-- <td></td> -->
+        <td>{{movie.size}} <br>
+          <span class="green-text">{{movie.seed}}</span>
+        </td>
+        <td> <a class="magnet" [href]="sanitize(movie.magnet)"><i class="fas fa-magnet"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<!-- <div class="container">
+  <div class="row" *ngFor="let movie of movies">
+    <div class="col-1">{{movie.id+1}}</div>
+    <div class="col-7">
+      {{movie.name}}
+    </div>
+    <div class="col-3">
+      {{movie.size}}
+      {{movie.seed}}
+    </div>
+    <div class="col-1"><a [href]="sanitize(movie.magnet)"><i class="fas fa-magnet"></i></a></div>
+  </div>
+</div> -->

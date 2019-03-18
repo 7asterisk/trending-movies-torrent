@@ -1,0 +1,33 @@
+
+   
+      <div class="md-form container" >
+          <i class="fa fa-search prefix"></i>
+        <input  type="text" [(ngModel)]="searchText.sname" class="form-control" placeholder="Search in Trending" >
+      </div>
+<!-- 
+<ul>
+  <li *ngFor="let c of characters | filter : searchText">
+   <a routerLink="/trending-download-page"  [queryParams]="{ name: c }">{{c}}</a> 
+  </li>
+</ul> -->
+<div class="container">
+  <table mdbTable class="z-depth-1">
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements; let i = index" scope="col">{{head}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies | filter:searchText ;let i = index">
+        <th class="d-sm-none" scope="row"><a routerLink="/trending-download-page/{{movie.id}}">{{i+1}} {{movie.sname}}</a></th>
+        <th class="d-none d-sm-block" scope="row"><a routerLink="/trending-download-page/{{movie.id}}">{{i+1}}
+            {{movie.name}}</a></th>
+        <td>{{movie.size}} <br>
+          <span class="green-text">{{movie.seed}}</span>
+        </td>
+        <td> <a class="magnet" [href]="sanitize(movie.magnet)"><i class="fas fa-magnet"></i></a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

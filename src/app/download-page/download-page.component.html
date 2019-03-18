@@ -1,0 +1,44 @@
+<div *ngIf="movie" class="container">
+    <!--Card-->
+    <mdb-card>
+      <!--Card content-->
+      <mdb-card-body>
+        <!--Title-->
+        <mdb-card-title>
+          <h4>{{movie.name}}</h4>
+        </mdb-card-title>
+        <hr>
+        <div class="row">
+          <div class="col-sm-3">
+            <p>Seeders: {{movie.seed}}</p>
+          </div>
+          <div class="col-sm-3">
+            <p>Leechers: {{movie.leech}}</p>
+          </div>
+          <div class="col-sm-3">
+            <p>Total Size: {{movie.size}}</p>
+          </div>
+          <div *ngIf="movie.lang" class="col-sm-3">
+            <p>Language:{{movie.lang}} </p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+            <a [href]="Url">
+              <button type="button" mdbBtn color="success" mdbWavesEffect><span class="icon">
+                  <i class="fas fa-magnet"></i>
+                </span>
+                <span> &nbsp; Download</span></button>
+            </a>
+          </div>
+      </mdb-card-body>
+      <!--/.Card content-->
+    </mdb-card>
+    <!--/.Card-->
+  </div>
+  <br><br>
+  <h4 class="text-center"><strong>Screenshort</strong></h4>
+  <div *ngIf="movie">
+    <div class="text-center" *ngFor="let img of movie.ss">
+      <img style="max-width:200px" src="{{img}}" alt=""><br><br>
+    </div>
+  </div>
