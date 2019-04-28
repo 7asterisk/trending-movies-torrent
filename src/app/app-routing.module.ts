@@ -6,9 +6,9 @@ import { TrendingMoviesComponent } from './trending-movies/trending-movies.compo
 import { TrendingDownloadPageComponent } from './trending-download-page/trending-download-page.component';
 import { TrendingTodayComponent } from './trending-today/trending-today.component';
 import { TrendingTodayDownloadComponent } from './trending-today-download/trending-today-download.component';
+import { HomeComponent } from './home/home.component';
 
-const routes: Routes = [{path: '', redirectTo: '/trending today', pathMatch: 'full'
-},
+const routes: Routes = [{path: '', component: HomeComponent },
 { path: 'trending this week', component: TrendingMoviesComponent },
 { path: 'trending today', component: TrendingTodayComponent },
 { path: 'download-page/:id', component: DownloadPageComponent },

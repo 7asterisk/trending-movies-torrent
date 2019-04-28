@@ -20,9 +20,13 @@
     </thead>
     <tbody>
       <tr *ngFor="let movie of movies | filter:searchText ;let i = index">
-        <th class="d-sm-none" scope="row"><a routerLink="/trending-download-page/{{movie.id}}">{{i+1}} {{movie.sname}}</a></th>
-        <th class="d-none d-sm-block" scope="row"><a routerLink="/trending-download-page/{{movie.id}}">{{i+1}}
-            {{movie.name}}</a></th>
+        <th class="d-sm-none" scope="row"><a routerLink="/trending-download-page/{{movie.id}}">
+          <img src="{{movie.ss[0]}}" style="width: 50px" alt="">
+          {{i+1}} {{movie.sname}}
+        </a></th>
+        <th class="d-none d-sm-block" scope="row"><a routerLink="/trending-download-page/{{movie.id}}">
+          <img src="{{movie.ss[0]}}" style="width: 50px" alt="">
+          {{i+1}} {{movie.name}}</a></th>
         <td>{{movie.size}} <br>
           <span class="green-text">{{movie.seed}}</span>
         </td>

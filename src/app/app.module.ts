@@ -22,6 +22,7 @@ import { TrendingTodayComponent } from './trending-today/trending-today.componen
 import { TrendingTodayDownloadComponent } from './trending-today-download/trending-today-download.component';
 import { firestore } from 'firebase';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
     TrendingDownloadPageComponent,
     FilterPipe,
     TrendingTodayComponent,
-    TrendingTodayDownloadComponent
+    TrendingTodayDownloadComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

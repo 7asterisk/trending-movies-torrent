@@ -1,0 +1,79 @@
+<div class="container">
+
+  <!-- Card -->
+  <mdb-card>
+    <!--Card content-->
+    <mdb-card-body style="padding : 0rem">
+      <!--Title-->
+      <mdb-card-title>
+        <h4 style="background-color: #1c2331;padding: .7rem; color: #fff">Trending Today</h4>
+      </mdb-card-title>
+      <!--Text-->
+      <mdb-card-text>
+        <div *ngFor="let m of trmovies ; let i=index">
+          <div class="media" *ngIf="i < 6">
+            <img class="d-flex mr-3" style="width: 80px;" src="{{m.ss[0]}}" alt="Generic placeholder image">
+            <div class="media-body">
+              <h5 class="mt-0 font-weight-bold"><a routerLink="/trending-today-download/{{m.id}}">{{m.name}}</a></h5>
+            </div>
+          </div>
+        </div>
+      </mdb-card-text>
+      <a [routerLink]="[ '/trending today']" mdbBtn style="background-color:  #ff4444;" mdbWavesEffect>More..</a>
+    </mdb-card-body>
+  </mdb-card>
+
+
+<br><br>
+
+  <!-- Card -->
+  <mdb-card>
+    <!--Card content-->
+    <mdb-card-body style="padding : 0rem">
+      <!--Title-->
+      <mdb-card-title>
+        <h4 style="background-color: #1c2331;padding: .7rem; color: #fff">Trending this week</h4>
+      </mdb-card-title>
+      <!--Text-->
+      <mdb-card-text>
+        <div *ngFor="let m of wmovies ; let i=index">
+          <div class="media" *ngIf="i < 6">
+            <img class="d-flex mr-3" style="width: 80px;" src="{{m.ss[0]}}" alt="Generic placeholder image">
+            <div class="media-body">
+              <h5 class="mt-0 font-weight-bold"><a routerLink="/trending-download-page/{{m.id}}">{{m.name}}</a></h5>
+            </div>
+          </div>
+        </div>
+      </mdb-card-text>
+      <a [routerLink]="[ '/trending this week']" mdbBtn style="background-color:  #ff4444;" mdbWavesEffect>More..</a>
+    </mdb-card-body>
+  </mdb-card>
+
+
+<br><br>
+
+  <!-- Card -->
+  <mdb-card>
+    <!--Card content-->
+    <mdb-card-body style="padding : 0rem">
+      <!--Title-->
+      <mdb-card-title>
+        <h4 style="background-color: #1c2331;padding: .7rem; color: #fff">Top Movies</h4>
+      </mdb-card-title>
+      <!--Text-->
+      <mdb-card-text>
+        <div *ngFor="let m of topmovies ; let i=index">
+          <div class="media" *ngIf="i < 6">
+            <img class="d-flex mr-3" style="width: 80px;" src="{{m.ss[0]}}" alt="Generic placeholder image">
+            <div class="media-body">
+              <h5 class="mt-0 font-weight-bold"><a routerLink="/download-page/{{m.id}}">{{m.name}}</a></h5>
+            </div>
+          </div>
+        </div>
+      </mdb-card-text>
+      <a [routerLink]="[ '/top 100 movies']" mdbBtn style="background-color:  #ff4444;" mdbWavesEffect>More..</a>
+    </mdb-card-body>
+  </mdb-card>
+<br><br>
+
+</div>
